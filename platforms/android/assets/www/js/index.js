@@ -47,24 +47,38 @@ var app = {
         console.log('Received Event: ' + id);
     }
 };
+/////////////////////////
+
 
 $(document).on("pagecreate","#section1",function(){
   $("#section1").on("swipeleft",function(){
+console.log("section1 left"); 
     $.mobile.changePage("#section2",{transition:"slide"});
-  });                       
+    // $(this).addClass(".slide.in");
+   
+  }); 
+  
+   
 });
+
+
+
 
 $(document).on("pagecreate","#section2",function(){
   $("#section2").on("swiperight",function(){
     $.mobile.changePage("#section1",{transition:"slide", reverse:true
 	    
     });
-  });  
+    
+
+  }); 
+  
+  console.log("section2 right"); 
 });
 
 $(document).on("pagecreate","#section2",function(){
   $("#section2").on("swipeleft",function(){
-    $.mobile.changePage("#section3",{transition:"slide",
+    $.mobile.changePage("#section3",{transition:"slide", 
 	    
     });
   });  
@@ -106,7 +120,21 @@ $(document).on("pagecreate","#section5",function(){
   $("#section5").on("swiperight",function(){
     $.mobile.changePage("#section4",{transition:"slide", reverse:true
 	    
+	    
     });
   });  
 });
-//////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////BOUNCE EFFECT
+
+/*
+$(function() {
+ $("#section0").click(function() {
+  var options = {}; //no options
+  
+ });
+  
+ function callback() {
+  //It will be called after the effect is completed
+ };
+});
+*/

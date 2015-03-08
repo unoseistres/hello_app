@@ -117,19 +117,19 @@ div#rectangle{
 
 }
 
-
+/*
 
 .slide.in {
 	-webkit-animation-name: bounceInRight !important; 
 	animation-name: bounceInRight; 
 	-webkit-animation-timing-function: ease-in;
-	-webkit-animation-duration: 3500ms;
+	-webkit-animation-duration: 750ms;
 	-moz-animation-timing-function: ease-out;
-	-moz-animation-duration: 3500ms;
+	-moz-animation-duration: 750ms;
 }
 @-webkit-keyframes bounceInRight { 
     0% { 
-        opacity: 1; 
+        opacity: 0; 
         -webkit-transform: translateX(2000px); 
     } 
     60% { 
@@ -137,7 +137,7 @@ div#rectangle{
         -webkit-transform: translateX(-30px); 
     } 
     80% { 
-        -webkit-transform: translateX(50px); 
+        -webkit-transform: translateX(10px); 
     } 
     100% { 
         -webkit-transform: translateX(0); 
@@ -146,7 +146,7 @@ div#rectangle{
  
 @keyframes bounceInRight { 
     0% { 
-        opacity: 1; 
+        opacity: 0; 
         transform: translateX(2000px); 
     } 
     60% { 
@@ -160,49 +160,45 @@ div#rectangle{
         transform: translateX(0); 
     } 
 } 
+*/
 
-/* ///////////////////////////////// */
-
-.slide.out.reverse {
-	-webkit-animation-name: bounceInLeft !important; 
-	animation-name: bounceInLeft; 
-	-webkit-animation-timing-function: ease-in;
-	-webkit-animation-duration: 3500ms;
-	-moz-animation-timing-function: ease-out;
-	-moz-animation-duration: 3500ms;
+#homepng{
+	width:40px;
+	height: 42px;
+	z-index: 100000;
+	/*
+margin-left: 700px;
+	margin-top: 18px;
+*/
 }
-@-webkit-keyframes bounceInLeft { 
-    0% { 
-        opacity: 1; 
-        -webkit-transform: translateX(2000px); 
-    } 
-    60% { 
-        opacity: 1; 
-        -webkit-transform: translateX(-30px); 
-    } 
-    80% { 
-        -webkit-transform: translateX(-50px); 
-    } 
-    100% { 
-        -webkit-transform: translateX(0); 
-    } 
-} 
- 
-@keyframes bounceInLeft { 
-    0% { 
-        opacity: 1; 
-        transform: translateX(2000px); 
-    } 
-    60% { 
-        opacity: 1; 
-        transform: translateX(-30px); 
-    } 
-    80% { 
-        transform: translateX(-10px); 
-    } 
-    100% { 
-        transform: translateX(0); 
-    } 
-} 
 
+#downloadpng{
+	width:40px;
+	height: 42px;
+	z-index: 100000;
+	
+	margin-left: 10px;
+	
+
+}
+
+#connectpng{
+	width:40px;
+	height: 42px;
+	z-index: 1000;
+	margin-left: 10px;
+	
+
+}
+
+#menu2{
+	position:fixed;
+	top:20px;
+	left: 730px;
+	height: 10px;
+	z-index: 70;
+	width: 100%;
+	padding: 0;
+	margin:0;
+}
 

@@ -49,22 +49,16 @@ var app = {
 };
 /////////////////////////
 
-/*
-$(document).on("pagecreate","#section1",function(){
-  $("#section1").on("swipeleft",function(){
-    $.mobile.changePage("#section2",{transition:"slide", 
-	    
-    });
-  });  
-});
-*/
 
 $(document).on("pagecreate","#section1",function(){
   $("#section1").on("swipeleft",function(){
-
+console.log("section1 left"); 
     $.mobile.changePage("#section2",{transition:"slide"});
-    $(this).addClass(".slide.in");
-  });  
+    // $(this).addClass(".slide.in");
+   
+  }); 
+  
+   
 });
 
 
@@ -75,9 +69,11 @@ $(document).on("pagecreate","#section2",function(){
     $.mobile.changePage("#section1",{transition:"slide", reverse:true
 	    
     });
-     $(this).addClass(".slide.out");
+    
 
-  });  
+  }); 
+  
+  console.log("section2 right"); 
 });
 
 $(document).on("pagecreate","#section2",function(){

@@ -39,11 +39,13 @@
 /Users/dickweed/documents/app_intake/hello_app/platforms/android/assets/www/spec.html \
 /Users/dickweed/documents/app_intake/hello_app/platforms/android/assets/www/css/examples.css \
 /Users/dickweed/documents/app_intake/hello_app/platforms/android/assets/www/css/index.css \
+/Users/dickweed/documents/app_intake/hello_app/platforms/android/assets/www/css/jquery-ui.css \
 /Users/dickweed/documents/app_intake/hello_app/platforms/android/assets/www/css/jquery.fullPage.css \
 /Users/dickweed/documents/app_intake/hello_app/platforms/android/assets/www/css/jquery.mobile-1.4.5.min.css \
 /Users/dickweed/documents/app_intake/hello_app/platforms/android/assets/www/css/normalize.css \
 /Users/dickweed/documents/app_intake/hello_app/platforms/android/assets/www/css/style.css \
 /Users/dickweed/documents/app_intake/hello_app/platforms/android/assets/www/css/style2.css \
+/Users/dickweed/documents/app_intake/hello_app/platforms/android/assets/www/img/home.png \
 /Users/dickweed/documents/app_intake/hello_app/platforms/android/assets/www/img/logo.png \
 /Users/dickweed/documents/app_intake/hello_app/platforms/android/assets/www/img/wire_frames-01.png \
 /Users/dickweed/documents/app_intake/hello_app/platforms/android/assets/www/img/wire_frames-02.png \
@@ -63,6 +65,8 @@
 /Users/dickweed/documents/app_intake/hello_app/platforms/android/assets/www/js/index.js \
 /Users/dickweed/documents/app_intake/hello_app/platforms/android/assets/www/js/javascript.js \
 /Users/dickweed/documents/app_intake/hello_app/platforms/android/assets/www/js/jquery-2.1.3.min.js \
+/Users/dickweed/documents/app_intake/hello_app/platforms/android/assets/www/js/jquery-ui.js \
+/Users/dickweed/documents/app_intake/hello_app/platforms/android/assets/www/js/jquery-ui.min.js \
 /Users/dickweed/documents/app_intake/hello_app/platforms/android/assets/www/js/jquery.fullPage.js \
 /Users/dickweed/documents/app_intake/hello_app/platforms/android/assets/www/js/jquery.mobile-1.4.5 \
 /Users/dickweed/documents/app_intake/hello_app/platforms/android/assets/www/js/jquery.mobile-1.4.5.js \
