@@ -61,22 +61,9 @@ $(document).on("pagecreate","#section1",function(){
 
 $(document).on("pagecreate","#section1",function(){
   $("#section1").on("swipeleft",function(){
-/*
-	  $(this).animate({
-    // opacity: 0.25,
-    left: "+=50",
-    // height: "toggle"
-  }, 
-  duration: 5000, 
-  easing: 'easeOutBounce'
-  });
-  
-  function() {
-    // Animation complete.
-  });
-*/
- 
-    $.mobile.changePage("#section2",{transition:"slide",});
+
+    $.mobile.changePage("#section2",{transition:"slide"});
+    $(this).addClass(".slide.in");
   });  
 });
 
@@ -88,6 +75,8 @@ $(document).on("pagecreate","#section2",function(){
     $.mobile.changePage("#section1",{transition:"slide", reverse:true
 	    
     });
+     $(this).addClass(".slide.out");
+
   });  
 });
 
