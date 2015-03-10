@@ -201,6 +201,15 @@ margin-left: 700px;
 
 }
 
+#drawerspng{
+	width:40px;
+	height: 42px;
+	z-index: 1000;
+	margin-left: 10px;
+	
+
+}
+
 #menu2{
 	position:fixed;
 	top:20px;
@@ -216,7 +225,7 @@ margin-left: 700px;
 
 #mypanel{
 	
-	width:100px;
+	width:200px;
 	z-index: 10000;
 	background: blue;
 	color: white;
