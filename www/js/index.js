@@ -50,18 +50,22 @@ var app = {
 /////////////////////////
 
 
+
+
+
+
+////////////////////////
+
+
 $(document).on("pagecreate","#section1",function(){
   $("#section1").on("swipeleft",function(){
 console.log("section1 left"); 
     $.mobile.changePage("#section2",{transition:"slide"});
-    // $(this).addClass(".slide.in");
-   
+       
   }); 
   
    
 });
-
-
 
 
 $(document).on("pagecreate","#section2",function(){
@@ -76,6 +80,7 @@ $(document).on("pagecreate","#section2",function(){
   console.log("section2 right"); 
 });
 
+
 $(document).on("pagecreate","#section2",function(){
   $("#section2").on("swipeleft",function(){
     $.mobile.changePage("#section3",{transition:"slide", 
@@ -83,6 +88,7 @@ $(document).on("pagecreate","#section2",function(){
     });
   });  
 });
+
 
 $(document).on("pagecreate","#section3",function(){
   $("#section3").on("swiperight",function(){
@@ -124,17 +130,11 @@ $(document).on("pagecreate","#section5",function(){
     });
   });  
 });
-////////////////////////////////////////////////////BOUNCE EFFECT
+////////////////////////////////////////////////////external panel
 
-/*
-$(function() {
- $("#section0").click(function() {
-  var options = {}; //no options
-  
- });
-  
- function callback() {
-  //It will be called after the effect is completed
- };
+var panel = '<div data-role="panel" id="mypanel" data-position="right" data-display="overlay"></div>';
+
+$(document).one('pagebeforecreate', function () {
+  $.mobile.pageContainer.prepend(panel);
+  $("#mypanel").panel();
 });
-*/
