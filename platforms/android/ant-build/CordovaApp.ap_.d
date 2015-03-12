@@ -75,6 +75,7 @@
 /Users/dickweed/documents/app_intake/hello_app/platforms/android/assets/www/js/jquery.mobile-1.4.5.js \
 /Users/dickweed/documents/app_intake/hello_app/platforms/android/assets/www/js/modernizr-2.6.2.min.js \
 /Users/dickweed/documents/app_intake/hello_app/platforms/android/assets/www/js/ninjaScroll.js \
+/Users/dickweed/documents/app_intake/hello_app/platforms/android/assets/www/js/SavePhotoPlugin.js \
 /Users/dickweed/documents/app_intake/hello_app/platforms/android/assets/www/js/fullPage.js-master/bower.json \
 /Users/dickweed/documents/app_intake/hello_app/platforms/android/assets/www/js/fullPage.js-master/examples \
 /Users/dickweed/documents/app_intake/hello_app/platforms/android/assets/www/js/fullPage.js-master/jquery.fullPage.css \
@@ -877,6 +878,7 @@
 /Users/dickweed/documents/app_intake/hello_app/platforms/android/assets/www/plugins/org.apache.cordova.camera \
 /Users/dickweed/documents/app_intake/hello_app/platforms/android/assets/www/plugins/org.apache.cordova.file \
 /Users/dickweed/documents/app_intake/hello_app/platforms/android/assets/www/plugins/org.apache.cordova.media-capture \
+/Users/dickweed/documents/app_intake/hello_app/platforms/android/assets/www/plugins/org.devgeeks.Canvas2ImagePlugin \
 /Users/dickweed/documents/app_intake/hello_app/platforms/android/assets/www/plugins/org.apache.cordova.camera/www \
 /Users/dickweed/documents/app_intake/hello_app/platforms/android/assets/www/plugins/org.apache.cordova.camera/www/Camera.js \
 /Users/dickweed/documents/app_intake/hello_app/platforms/android/assets/www/plugins/org.apache.cordova.camera/www/CameraConstants.js \
@@ -913,6 +915,8 @@
 /Users/dickweed/documents/app_intake/hello_app/platforms/android/assets/www/plugins/org.apache.cordova.media-capture/www/CaptureVideoOptions.js \
 /Users/dickweed/documents/app_intake/hello_app/platforms/android/assets/www/plugins/org.apache.cordova.media-capture/www/MediaFile.js \
 /Users/dickweed/documents/app_intake/hello_app/platforms/android/assets/www/plugins/org.apache.cordova.media-capture/www/MediaFileData.js \
+/Users/dickweed/documents/app_intake/hello_app/platforms/android/assets/www/plugins/org.devgeeks.Canvas2ImagePlugin/www \
+/Users/dickweed/documents/app_intake/hello_app/platforms/android/assets/www/plugins/org.devgeeks.Canvas2ImagePlugin/www/Canvas2ImagePlugin.js \
 /Users/dickweed/documents/app_intake/hello_app/platforms/android/assets/www/res/icon \
 /Users/dickweed/documents/app_intake/hello_app/platforms/android/assets/www/res/screen \
 /Users/dickweed/documents/app_intake/hello_app/platforms/android/assets/www/res/icon/android \

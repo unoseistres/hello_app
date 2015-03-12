@@ -143,7 +143,50 @@ $(document).one('pagebeforecreate', function () {
 
 		}
 		
-////////////////
+////////////////save picture 
+
+/*
+function getPicture(){
+	cam.getPicture(onSuccess, onFail, { quality: 50,
+    	destinationType: Camera.PictureSourceType.PHOTOLIBRARY});
+      
+    }
+*/
+
+function save(dataURL){
+	alert("do you want to save?");
+		
+	
+	
+	/*
+var canvas = document.getElementById("can");
+	var dataURL = can.toDataURL('image/png');
+	console.log(dataURL);
+	// image.src= dataURL;
+	savePic();
+        
+    
+    }
+    
+    function savePic(){
+	    
+    }
+*/
+
+    window.canvas2ImagePlugin.saveImageDataToLibrary(
+        function(msg){
+            console.log(msg);
+        },
+        function(err){
+            console.log(err);
+            
+        },
+       
+        document.getElementById('can')
+    );
+    	alert("hi");
+}
+
 
 
 

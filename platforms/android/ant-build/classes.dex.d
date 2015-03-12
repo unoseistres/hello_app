@@ -56,4 +56,5 @@
 /Users/dickweed/documents/app_intake/hello_app/platforms/android/ant-build/classes/org/apache/cordova/mediacapture/Capture$3.class \
 /Users/dickweed/documents/app_intake/hello_app/platforms/android/ant-build/classes/org/apache/cordova/mediacapture/Capture.class \
 /Users/dickweed/documents/app_intake/hello_app/platforms/android/ant-build/classes/org/apache/cordova/mediacapture/FileHelper.class \
+/Users/dickweed/documents/app_intake/hello_app/platforms/android/ant-build/classes/org/devgeeks/Canvas2ImagePlugin/Canvas2ImagePlugin.class \
 /Users/dickweed/documents/app_intake/hello_app/platforms/android/ant-build/dexedLibs/classes-13d68a952592c89cab1c98347adaa2e8.jar \

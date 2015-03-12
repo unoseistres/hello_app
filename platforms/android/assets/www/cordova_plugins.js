@@ -78,6 +78,13 @@ module.exports = [
         ]
     },
     {
+        "file": "plugins/org.devgeeks.Canvas2ImagePlugin/www/Canvas2ImagePlugin.js",
+        "id": "org.devgeeks.Canvas2ImagePlugin.Canvas2ImagePlugin",
+        "clobbers": [
+            "window.canvas2ImagePlugin"
+        ]
+    },
+    {
         "file": "plugins/org.apache.cordova.file/www/DirectoryEntry.js",
         "id": "org.apache.cordova.file.DirectoryEntry",
         "clobbers": [
@@ -229,6 +236,7 @@ module.exports.metadata =
 {
     "org.apache.cordova.camera": "0.3.5",
     "org.apache.cordova.media-capture": "0.3.6",
+    "org.devgeeks.Canvas2ImagePlugin": "0.6.0",
     "org.apache.cordova.file": "1.3.3"
 }
 // BOTTOM OF METADATA
