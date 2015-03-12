@@ -133,6 +133,9 @@ var panel = '<div data-role="panel" id="mypanel" data-position="right" data-disp
 $(document).one('pagebeforecreate', function () {
   $.mobile.pageContainer.prepend(panel);
   $("#mypanel").panel();
+  $('#mypanel').prepend('<img id="theImg" src="/mnt/sdcard/Pictures/c2i_1222015184017.png"/>');
+  
+  
 });
 
 
@@ -145,33 +148,10 @@ $(document).one('pagebeforecreate', function () {
 		
 ////////////////save picture 
 
-/*
-function getPicture(){
-	cam.getPicture(onSuccess, onFail, { quality: 50,
-    	destinationType: Camera.PictureSourceType.PHOTOLIBRARY});
-      
-    }
-*/
 
 function save(dataURL){
 	alert("do you want to save?");
-		
-	
-	
-	/*
-var canvas = document.getElementById("can");
-	var dataURL = can.toDataURL('image/png');
-	console.log(dataURL);
-	// image.src= dataURL;
-	savePic();
-        
-    
-    }
-    
-    function savePic(){
-	    
-    }
-*/
+	// console.log(dataURL);
 
     window.canvas2ImagePlugin.saveImageDataToLibrary(
         function(msg){
@@ -187,6 +167,8 @@ var canvas = document.getElementById("can");
     	alert("hi");
 }
 
+
+ 
 
 
 
