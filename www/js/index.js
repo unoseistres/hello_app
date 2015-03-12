@@ -56,12 +56,11 @@ var app = {
 
 $(document).on("pagecreate","#section1",function(){
   $("#section1").on("swipeleft",function(){
-console.log("section1 left"); 
+  	console.log("section1 left"); 
     $.mobile.changePage("#section2",{transition:"slide"});
        
   }); 
   
-   
 });
 
 
@@ -136,9 +135,6 @@ $(document).one('pagebeforecreate', function () {
   $("#mypanel").panel();
 });
 
-///////////////////////////////////////////////// canvas drawing
-////////////first canvas 
-
 
 //slider
 		  function showValue(newValue)
@@ -148,4 +144,6 @@ $(document).one('pagebeforecreate', function () {
 		}
 		
 ////////////////
-// $('[data-role="page"]').bind('pageshow', function() { $("#can").parents("*").css("overflow", "visible"); });
+
+
+

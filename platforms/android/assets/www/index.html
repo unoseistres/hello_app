@@ -95,6 +95,7 @@ function init(){
 	
     canvas = document.getElementById('can');
     ctx = canvas.getContext("2d");
+    ctx.fillStyle = "rgba(0, 0, 0, 0)";
     
     w = canvas.width;
     h = canvas.height;
@@ -112,7 +113,14 @@ function init(){
     canvas.addEventListener("mouseout", function (e) {
         findxy('out', e)
     }, false);
+    
+	if(ctx){
+	canvas.addEventListener('touchstart', draw, false);
+	canvas.addEventListener('touchmove', draw, false);
+	}
 }
+
+
 
 function color(obj) {
     switch (obj.id) {
@@ -134,25 +142,17 @@ function draw() {
     ctx.stroke();
     ctx.closePath();
     console.log("darwing");
+    event.preventDefault();
 
 }
-
-
-
 
 function erase() {
     var m = confirm("Want to clear");
     if (m) {
         ctx.clearRect(0, 0, w, h);
-        /*
-context.fillStyle = '#fff';
-		context.fillRect(0, 0, display.width, display.height);
-*/
-        
-       //  document.getElementById("canvasimg").style.display = "none";
+  
     }
 }
-
 
 function findxy(res, e) {
     if (res == 'down') {
