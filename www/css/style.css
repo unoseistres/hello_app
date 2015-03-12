@@ -291,12 +291,12 @@ margin-left: 700px;
   }
   
   #where {
-    /* position: absolute; */
+    position: absolute;
     height: 100%;
     width: 900px;
     height: auto;
     margin-left: 20px;
-    top: 100px;
+    top: 120px;
     background-color: #f5e39a;
     float:left; 
     /* overflow: hidden; */
