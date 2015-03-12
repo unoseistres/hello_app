@@ -115,8 +115,8 @@ function init(){
     }, false);
     
 	if(ctx){
-	canvas.addEventListener('touchstart', draw, false);
-	canvas.addEventListener('touchmove', draw, false);
+	canvas.addEventListener('touchstart', findxy, false);
+	canvas.addEventListener('touchmove', findxy, false);
 	}
 }
 
@@ -142,7 +142,7 @@ function draw() {
     ctx.stroke();
     ctx.closePath();
     console.log("darwing");
-    event.preventDefault();
+    
 
 }
 
@@ -184,7 +184,7 @@ function findxy(res, e) {
         }
     }
 
-
+event.preventDefault();
 }
 </script>
 	
