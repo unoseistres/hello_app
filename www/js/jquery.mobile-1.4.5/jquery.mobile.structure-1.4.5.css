@@ -206,8 +206,9 @@ div.ui-mobile-viewport {
 .ui-content {
 	border-width: 0;
 	overflow: visible;
-	overflow-x: hidden;
-	padding: 1em;
+	/* overflow-x: hidden; */
+	/* padding: 1em; */
+	padding:15px;
 }
 /* Corner styling for dialogs and popups */
 .ui-corner-all > .ui-header:first-child,

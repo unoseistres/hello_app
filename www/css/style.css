@@ -1,3 +1,17 @@
+
+
+html, body {
+    max-width: 100% !important;
+	overflow-y: hidden !important; 
+    overflow-x: scroll;
+
+
+    
+} 
+
+
+
+ 
  #goal{
 	 /* display: table; */
     /* table-layout:fixed; */
@@ -17,12 +31,14 @@
  
  
  #section1{
-	/*  position:absolute; */
+	 
+	 position:absolute;
 	border: black;
 	 background-color: #fce9b2;
 	 width: device-width;
 	 height: 604px;
 	 left:0px;
+	 /* overflow: hidden; */
 	 
 
  }
@@ -229,18 +245,63 @@ margin-left: 700px;
 	z-index: 10000;
 	background: blue;
 	color: white;
-	border: 1px solid red;
+	/* border: 1px solid red; */
 	
 }
 
-/*
-#header{
-	position: fixed;
-	width:100px;
-	z-index: 10000;
-	background: blue;
-	color: white;
-	border: 1px solid red;
+#colorWrap{
+
+    background-color: gray;
+    z-index: 100;
+  }
+  #controls {
+
+	position: relative;
+	margin: 22px 1% 0 0;
+	float: right;	
+	width: 350px;
+	height: auto;
+	overflow: hidden;
+  }
+  
+  #controls input {
+  	padding: 5px 10px;
+	height: 40px;
+	margin-bottom: 20px;
+	box-sizing: border-box;
+	display: block;
+
+  } 
+ 
+  input[type="button"]#erase-color {
+    background: white;
+      width:70px;
+    height:50px;
 }
-*/
+  input[type="color"]#color{
+  	padding: 0;
+  }
+  input[type="range"]#rangecolor{
+  	border: 1px solid blue;
+  }
+  input[type="button"]#white {
+	  background: white;
+    width:70px;
+    height:50px;
+  }
+  
+  #where {
+    /* position: absolute; */
+    height: 100%;
+    width: 900px;
+    height: auto;
+    margin-left: 20px;
+    top: 100px;
+    background-color: #f5e39a;
+    float:left; 
+    /* overflow: hidden; */
+  }
+  
+  
+
 

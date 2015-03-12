@@ -31,11 +31,14 @@
 
 
 </head>
-<body>
+<body onload="init()">
+<div id="header">
+	
 
+</div>
 
 <!-- rectangle in the back menu --> 
-<div id= "rectangle" data-role="header" data-position="fixed" data-fullscreen="true">		
+<div id= "rectangle" data-role="header" data-position="fixed" data-fullscreen="true" >		
 	<!-- the little circles up top on the navigation -->
 	<ul id="menu">
 		<li data-menuanchor="firstpage"><a href="#section1" ></a></li>
@@ -51,29 +54,148 @@
 		<a href="index.html"><input type="image" id="homepng" src="img/home.png" alt="Submit" /></a>
 		<input type="image" id="downloadpng" src="img/download.png" alt="Submit" />
 		<input type="image" id="connectpng" src="img/connect.png" alt="Submit" />
-		<a href="#mypanel">Open panel</a>
+		<a  href="#mypanel" >
+			<img id="drawerspng" src="img/drawers.png"/>
+		</a>
+		
 	</ul>
 </div>
 
 
-
-	
-
-
 <!-- //sections start here  -->
-<!-- <div data-role="panel" id="section1"> -->
-<div id="section1">
+
+<div id="section1" data-role="page" style="overflow-x: visible">
 	<div data-role="main" class="ui-content">	
+			<div id="where">
+                  
+				<div id="controls"> 
+				
+				     <input id="color" type="color" value="#ff0000" onchange="x =document.getElementById('color').value;"/>  
+				     <input id="rangecolor" type="range" min="1" max="20" value="1" onchange="showValue(this.value)"/>  
+				     <input id="white" type="button" onclick="color(this)" value="Eraser">
+				     <input id="erase-color" type="button" value="Clear" id="clr" size="23" onclick="erase()">
+			    </div>
+    
+				</div>	
 	</div>
-	<div data-role="panel" id="mypanel" data-position="right" data-display="overlay" ></div>
+	<canvas id="can" width="500" height="500" style="position:absolute;top:15%;left:5%;border:2px solid; "></canvas>
+	<script>
+		var canvas, ctx, flag = false,
+    prevX = 0,
+    currX = 0,
+    prevY = 0,
+    currY = 0,
+    dot_flag = false;
+
+var x = document.getElementById('color'),
+    /* y = 7; */
+    y = document.getElementById('range');
+
+function init(){
+	
+    canvas = document.getElementById('can');
+    ctx = canvas.getContext("2d");
+    
+    w = canvas.width;
+    h = canvas.height;
+
+
+    canvas.addEventListener("mousemove", function (e) {
+        findxy('move', e)
+    }, false);
+    canvas.addEventListener("mousedown", function (e) {
+        findxy('down', e)
+    }, false);
+    canvas.addEventListener("mouseup", function (e) {
+        findxy('up', e)
+    }, false);
+    canvas.addEventListener("mouseout", function (e) {
+        findxy('out', e)
+    }, false);
+}
+
+function color(obj) {
+    switch (obj.id) {
+        case "white":
+            x = "white";
+            break;
+    }
+
+ if (x == "white") y = document.getElementById('range');
+
+}
+
+function draw() {
+    ctx.beginPath();
+    ctx.moveTo(prevX, prevY);
+    ctx.lineTo(currX, currY);
+    ctx.strokeStyle = x;
+    ctx.lineWidth = y;
+    ctx.stroke();
+    ctx.closePath();
+    console.log("darwing");
+
+}
+
+
+
+
+function erase() {
+    var m = confirm("Want to clear");
+    if (m) {
+        ctx.clearRect(0, 0, w, h);
+        /*
+context.fillStyle = '#fff';
+		context.fillRect(0, 0, display.width, display.height);
+*/
+        
+       //  document.getElementById("canvasimg").style.display = "none";
+    }
+}
+
+
+function findxy(res, e) {
+    if (res == 'down') {
+        prevX = currX;
+        prevY = currY;
+        currX = e.clientX - canvas.offsetLeft;
+        currY = e.clientY - canvas.offsetTop;
+
+        flag = true;
+        dot_flag = true;
+        if (dot_flag) {
+            ctx.beginPath();
+            ctx.fillStyle = x;
+            ctx.fillRect(currX, currY, 2, 2);
+            ctx.closePath();
+            dot_flag = false;
+        }
+    }
+    if (res == 'up' || res == "out") {
+        flag = false;
+    }
+    if (res == 'move') {
+        if (flag) {
+            prevX = currX;
+            prevY = currY;
+            currX = e.clientX - canvas.offsetLeft;
+            currY = e.clientY - canvas.offsetTop;
+            draw();
+        }
+    }
+
+
+}
+</script>
+	
 </div>
 
-<div id="section2">
+<div id="section2" data-role="page">
 	<div data-role="main" class="ui-content">	
 	</div>
-	
-	
-</div> 
+		
+</div>
+
 
 <div id="section3">
 	<div data-role="main" class="ui-content">
@@ -90,6 +212,7 @@
 	</div>
 </div> 
   </div>
+
 
 </body>
 </html>

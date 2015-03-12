@@ -51,9 +51,6 @@ var app = {
 
 
 
-
-
-
 ////////////////////////
 
 
@@ -138,3 +135,17 @@ $(document).one('pagebeforecreate', function () {
   $.mobile.pageContainer.prepend(panel);
   $("#mypanel").panel();
 });
+
+///////////////////////////////////////////////// canvas drawing
+////////////first canvas 
+
+
+//slider
+		  function showValue(newValue)
+		  {
+		y=newValue;
+
+		}
+		
+////////////////
+// $('[data-role="page"]').bind('pageshow', function() { $("#can").parents("*").css("overflow", "visible"); });

@@ -47,6 +47,7 @@
 /Users/dickweed/documents/app_intake/hello_app/platforms/android/assets/www/css/style2.css \
 /Users/dickweed/documents/app_intake/hello_app/platforms/android/assets/www/img/connect.png \
 /Users/dickweed/documents/app_intake/hello_app/platforms/android/assets/www/img/download.png \
+/Users/dickweed/documents/app_intake/hello_app/platforms/android/assets/www/img/drawers.png \
 /Users/dickweed/documents/app_intake/hello_app/platforms/android/assets/www/img/home.png \
 /Users/dickweed/documents/app_intake/hello_app/platforms/android/assets/www/img/logo.png \
 /Users/dickweed/documents/app_intake/hello_app/platforms/android/assets/www/img/wire_frames-01.png \

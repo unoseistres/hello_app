@@ -50,21 +50,11 @@ var app = {
 /////////////////////////
 
 
-// $( "#mypanel" ).trigger( "open" , optionsHash );
-
-  $("#mypanel").click(function(){
-	
-	var value = $("#mypanel").text();
-	alert("value");
-	
-	
-  });
-
 
 ////////////////////////
 
 
-// $(document).on("pagecreate","#section1",function(){
+$(document).on("pagecreate","#section1",function(){
   $("#section1").on("swipeleft",function(){
 console.log("section1 left"); 
     $.mobile.changePage("#section2",{transition:"slide"});
@@ -72,12 +62,10 @@ console.log("section1 left");
   }); 
   
    
-// });
+});
 
 
-
-
-// $(document).on("pagecreate","#section2",function(){
+$(document).on("pagecreate","#section2",function(){
   $("#section2").on("swiperight",function(){
     $.mobile.changePage("#section1",{transition:"slide", reverse:true
 	    
@@ -87,7 +75,8 @@ console.log("section1 left");
   }); 
   
   console.log("section2 right"); 
-// });
+});
+
 
 $(document).on("pagecreate","#section2",function(){
   $("#section2").on("swipeleft",function(){
@@ -96,6 +85,7 @@ $(document).on("pagecreate","#section2",function(){
     });
   });  
 });
+
 
 $(document).on("pagecreate","#section3",function(){
   $("#section3").on("swiperight",function(){
@@ -137,17 +127,25 @@ $(document).on("pagecreate","#section5",function(){
     });
   });  
 });
-////////////////////////////////////////////////////BOUNCE EFFECT
+////////////////////////////////////////////////////external panel
 
-/*
-$(function() {
- $("#section0").click(function() {
-  var options = {}; //no options
-  
- });
-  
- function callback() {
-  //It will be called after the effect is completed
- };
+var panel = '<div data-role="panel" id="mypanel" data-position="right" data-display="overlay"></div>';
+
+$(document).one('pagebeforecreate', function () {
+  $.mobile.pageContainer.prepend(panel);
+  $("#mypanel").panel();
 });
-*/
+
+///////////////////////////////////////////////// canvas drawing
+////////////first canvas 
+
+
+//slider
+		  function showValue(newValue)
+		  {
+		y=newValue;
+
+		}
+		
+////////////////
+// $('[data-role="page"]').bind('pageshow', function() { $("#can").parents("*").css("overflow", "visible"); });
