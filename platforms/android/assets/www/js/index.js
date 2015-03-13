@@ -133,7 +133,7 @@ var panel = '<div data-role="panel" id="mypanel" data-position="right" data-disp
 $(document).one('pagebeforecreate', function () {
   $.mobile.pageContainer.prepend(panel);
   $("#mypanel").panel();
-  $('#mypanel').prepend('<img id="theImg" src="/mnt/sdcard/Pictures/c2i_12220151627.png"/>');
+  // $('#mypanel').prepend('<img id="theImg" src="/mnt/sdcard/Pictures/c2i_12220151627.png"/>');
   // $('#mypanel').prepend('/mnt/sdcard/Pictures/' + '.png');
   
   
@@ -155,8 +155,9 @@ function save(dataURL){
 	// console.log(dataURL);
 
     window.canvas2ImagePlugin.saveImageDataToLibrary(
-        function(msg){
+        function(msg){//the file of the images
             console.log(msg);
+            $('#mypanel').prepend('<img id="theImg" src="'+msg+'"/>');//path of new images! 
         },
         function(err){
             console.log(err);
