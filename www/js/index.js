@@ -133,7 +133,8 @@ var panel = '<div data-role="panel" id="mypanel" data-position="right" data-disp
 $(document).one('pagebeforecreate', function () {
   $.mobile.pageContainer.prepend(panel);
   $("#mypanel").panel();
-  $('#mypanel').prepend('<img id="theImg" src="/mnt/sdcard/Pictures/c2i_1222015184017.png"/>');
+  $('#mypanel').prepend('<img id="theImg" src="/mnt/sdcard/Pictures/c2i_12220151627.png"/>');
+  // $('#mypanel').prepend('/mnt/sdcard/Pictures/' + '.png');
   
   
 });
@@ -166,6 +167,8 @@ function save(dataURL){
     );
     	alert("hi");
 }
+
+
 
 
  
