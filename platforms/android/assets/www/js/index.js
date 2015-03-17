@@ -165,7 +165,9 @@ function save(dataURL){
         function(msg){//the file of the images
             console.log(msg);
             $('#mypanel').prepend('<img id="theImg" src="'+msg+'"/>');//path of new images and appending them to panel 
-            
+            $(function() {
+			$( "#theImg" ).draggable();
+  			});
         },
         
         function(err){
