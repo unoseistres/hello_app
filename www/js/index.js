@@ -49,7 +49,7 @@ var app = {
 };
 /////////////////////////
 
-
+(function(b){b.support.touch="ontouchend" in document;if(!b.support.touch){return;}var c=b.ui.mouse.prototype,e=c._mouseInit,a;function d(g,h){if(g.originalEvent.touches.length>1){return;}g.preventDefault();var i=g.originalEvent.changedTouches[0],f=document.createEvent("MouseEvents");f.initMouseEvent(h,true,true,window,1,i.screenX,i.screenY,i.clientX,i.clientY,false,false,false,false,0,null);g.target.dispatchEvent(f);}c._touchStart=function(g){var f=this;if(a||!f._mouseCapture(g.originalEvent.changedTouches[0])){return;}a=true;f._touchMoved=false;d(g,"mouseover");d(g,"mousemove");d(g,"mousedown");};c._touchMove=function(f){if(!a){return;}this._touchMoved=true;d(f,"mousemove");};c._touchEnd=function(f){if(!a){return;}d(f,"mouseup");d(f,"mouseout");if(!this._touchMoved){d(f,"click");}a=false;};c._mouseInit=function(){var f=this;f.element.bind("touchstart",b.proxy(f,"_touchStart")).bind("touchmove",b.proxy(f,"_touchMove")).bind("touchend",b.proxy(f,"_touchEnd"));e.call(f);};})(jQuery);
 
 ////////////////////////
 
@@ -60,6 +60,9 @@ $(document).on("pagecreate","#section1",function(){
     $.mobile.changePage("#section2",{transition:"slide"});
        
   }); 
+  
+  
+  
   
 });
 
@@ -128,16 +131,15 @@ $(document).on("pagecreate","#section5",function(){
 });
 ////////////////////////////////////////////////////external panel
 
-var panel = '<div data-role="panel" id="mypanel" data-position="right" data-display="overlay"></div>';
+var panel = '<div data-role="panel" id="mypanel" data-position="right" data-display="overlay" data-position-fixed="true"></div>';
 
 $(document).one('pagebeforecreate', function () {
   $.mobile.pageContainer.prepend(panel);
   $("#mypanel").panel();
-  // $('#mypanel').prepend('<img id="theImg" src="/mnt/sdcard/Pictures/c2i_12220151627.png"/>');
-  // $('#mypanel').prepend('/mnt/sdcard/Pictures/' + '.png');
-  
-  
+     
 });
+
+
 
 
 //slider
@@ -146,6 +148,11 @@ $(document).one('pagebeforecreate', function () {
 		y=newValue;
 
 		}
+		
+/////draggable img
+
+ 
+	
 		
 ////////////////save picture 
 
@@ -157,8 +164,10 @@ function save(dataURL){
     window.canvas2ImagePlugin.saveImageDataToLibrary(
         function(msg){//the file of the images
             console.log(msg);
-            $('#mypanel').prepend('<img id="theImg" src="'+msg+'"/>');//path of new images! 
+            $('#mypanel').prepend('<img id="theImg" src="'+msg+'"/>');//path of new images and appending them to panel 
+            
         },
+        
         function(err){
             console.log(err);
             
@@ -168,6 +177,9 @@ function save(dataURL){
     );
     	alert("hi");
 }
+
+
+
 
 
 
