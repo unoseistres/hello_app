@@ -165,9 +165,59 @@ function save(dataURL){
         function(msg){//the file of the images
             console.log(msg);
             $('#mypanel').prepend('<img id="theImg" src="'+msg+'"/>');//path of new images and appending them to panel 
-            $(function() {
-			$( "#theImg" ).draggable();
+   
+  			$(function() {
+  				 //Counter
+  				 counter = 0;
+  				 //Make element draggable
+  				 $("#theImg").draggable({
+  				 helper: 'clone',
+  				 containment: 'can',
+  				 //When first dragged
+  				 stop: function (ev, ui) {
+  				 var pos = $(ui.helper).offset();
+  				 objName = "#clonediv" + counter
+  				 $(objName).css({
+  				 "left": pos.left,
+  				 "top": pos.top
+            });
+            	$(objName).removeClass("drag");
+				//When an existiung object is dragged
+				$(objName).draggable({
+                containment: 'can',
+                stop: function (ev, ui) {
+                    var pos = $(ui.helper).offset();
+                    console.log($(this).attr("id"));
+                    console.log(pos.left)
+                    console.log(pos.top)
+                }
+            		});
+        				}
+    						});
+    //Make element droppable
+    $("#can").droppable({
+        drop: function (ev, ui) {
+            if (ui.helper.attr('id').search(/drag[0-9]/) != -1) {
+                counter++;
+                var element = $(ui.draggable).clone();
+                can.addClass("tempclass");
+                $(this).append(can);
+                $(".tempclass").attr("id", "clonediv" + counter);
+                $("#clonediv" + counter).removeClass("tempclass");
+                //Get the dynamically item id
+                draggedNumber = ui.helper.attr('id').search(/drag([0-9])/)
+                itemDragged = "dragged" + RegExp.$1
+                console.log(itemDragged)
+                $("#clonediv" + counter).addClass(itemDragged);
+            }
+        }
+    });
   			});
+       
+       
+       
+       
+       
         },
         
         function(err){

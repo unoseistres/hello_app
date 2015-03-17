@@ -245,9 +245,9 @@ margin-left: 700px;
 	z-index: 10000;
 	background: blue;
 	color: white;
-	/* border: 1px solid red; */
 	overflow-y: hidden !important; 
     overflow-x:hidden !important; 
+     padding-top: 5cm;
 	
 }
 
@@ -319,6 +319,8 @@ margin-left: 700px;
 #theImg{
 	  width:80px;
 	  height:80px;
+	  z-index: 100000;
+	  position:relative;
 	  }
 
 li em { 
@@ -330,6 +332,11 @@ li span {
     display: inline-block; }
   }
 
+#clonediv{
+	width:80px;
+	  height:80px;
+	  z-index: 100000;
+	}
   
 
 
