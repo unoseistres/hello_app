@@ -245,8 +245,10 @@ margin-left: 700px;
 	z-index: 10000;
 	background: blue;
 	color: white;
-	overflow-y: hidden !important; 
-    overflow-x:hidden !important; 
+	/*
+overflow-y: hidden !important; 
+    overflow-x:hidden !important;
+*/ 
      padding-top: 5cm;
 	
 }
@@ -332,10 +334,22 @@ li span {
     display: inline-block; }
   }
 
+/*
 #clonediv{
 	width:80px;
 	  height:80px;
 	  z-index: 100000;
+	}
+*/
+
+#can{
+	z-index: 100000;
+	width:700px;
+	height:700px;
+	position:absolute;
+	top:15%;
+	left:5%;
+	border:2px solid;
 	}
   
 

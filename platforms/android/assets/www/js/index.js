@@ -47,9 +47,10 @@ var app = {
         console.log('Received Event: ' + id);
     }
 };
+
+ 
 /////////////////////////
 
-(function(b){b.support.touch="ontouchend" in document;if(!b.support.touch){return;}var c=b.ui.mouse.prototype,e=c._mouseInit,a;function d(g,h){if(g.originalEvent.touches.length>1){return;}g.preventDefault();var i=g.originalEvent.changedTouches[0],f=document.createEvent("MouseEvents");f.initMouseEvent(h,true,true,window,1,i.screenX,i.screenY,i.clientX,i.clientY,false,false,false,false,0,null);g.target.dispatchEvent(f);}c._touchStart=function(g){var f=this;if(a||!f._mouseCapture(g.originalEvent.changedTouches[0])){return;}a=true;f._touchMoved=false;d(g,"mouseover");d(g,"mousemove");d(g,"mousedown");};c._touchMove=function(f){if(!a){return;}this._touchMoved=true;d(f,"mousemove");};c._touchEnd=function(f){if(!a){return;}d(f,"mouseup");d(f,"mouseout");if(!this._touchMoved){d(f,"click");}a=false;};c._mouseInit=function(){var f=this;f.element.bind("touchstart",b.proxy(f,"_touchStart")).bind("touchmove",b.proxy(f,"_touchMove")).bind("touchend",b.proxy(f,"_touchEnd"));e.call(f);};})(jQuery);
 
 ////////////////////////
 
@@ -167,6 +168,7 @@ function save(dataURL){
             $('#mypanel').prepend('<img id="theImg" src="'+msg+'"/>');//path of new images and appending them to panel 
    
   			$(function() {
+	  			
   				 //Counter
   				 counter = 0;
   				 //Make element draggable
@@ -175,33 +177,32 @@ function save(dataURL){
   				 containment: 'can',
   				 //When first dragged
   				 stop: function (ev, ui) {
+
   				 var pos = $(ui.helper).offset();
   				 objName = "#clonediv" + counter
   				 $(objName).css({
   				 "left": pos.left,
   				 "top": pos.top
             });
-            	$(objName).removeClass("drag");
+            	// $(objName).removeAttr('id');
+            	$(objName).removeAttr("theImg");
 				//When an existiung object is dragged
 				$(objName).draggable({
                 containment: 'can',
                 stop: function (ev, ui) {
                     var pos = $(ui.helper).offset();
-                    console.log($(this).attr("id"));
-                    console.log(pos.left)
-                    console.log(pos.top)
                 }
             		});
         				}
-    						});
-    //Make element droppable
-    $("#can").droppable({
-        drop: function (ev, ui) {
-            if (ui.helper.attr('id').search(/drag[0-9]/) != -1) {
+    		});
+				//Make element droppable
+				$("#can").droppable({
+				drop: function (ev, ui) {
+				if (ui.helper.attr('id').search(/drag[0-9]/) != -1) {
                 counter++;
                 var element = $(ui.draggable).clone();
-                can.addClass("tempclass");
-                $(this).append(can);
+                element.addClass("tempclass");
+                $(this).append(element);
                 $(".tempclass").attr("id", "clonediv" + counter);
                 $("#clonediv" + counter).removeClass("tempclass");
                 //Get the dynamically item id
@@ -209,14 +210,12 @@ function save(dataURL){
                 itemDragged = "dragged" + RegExp.$1
                 console.log(itemDragged)
                 $("#clonediv" + counter).addClass(itemDragged);
-            }
-        }
-    });
+            					}
+        					}
+    				});
   			});
-       
-       
-       
-       
+  
+  	
        
         },
         
