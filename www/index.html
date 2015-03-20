@@ -85,7 +85,8 @@
 				     
 				     <input id="slider" type ="range" min ="1" max="20" step ="1" value ="1" onchange="updateSlider(this.value)"/>
 				     
-				     <input id="white" type="button" onclick="color(this)" value="Eraser">
+				     <button id="eraser" onclick="myEraser()">Eraser</button>
+				     <button id="eraser" onclick="myMarker()">Marker</button>
 				     <input id="erase-color" type="button" value="Clear" id="clr" size="23" onclick="erase()">
 				     <input id="save" type="button" value="Save" id="save" size="23" onclick="save()">
 			    </div>
@@ -100,6 +101,7 @@
 
    // Variables for referencing the canvas and 2dcanvas context
     var canvas,ctx;
+    
 
 	var coloring;
 	
@@ -263,6 +265,19 @@
         }
     }
 
+	function myEraser(){
+	
+			ctx.globalCompositeOperation = "destination-out";
+			ctx.strokeStyle = "rgba(0,0,0,1)";
+			drawLine(ctx,touchX,touchY,s);
+	 }
+	 
+	 function myMarker(){
+	
+			ctx.globalCompositeOperation = "destination-out";
+			ctx.strokeStyle = "rgba(0,0,0,1)";
+			drawLine(ctx,touchX,touchY,s);
+	 }
 
     // Set-up the canvas and add our event handlers after the page has loaded
     function init() {

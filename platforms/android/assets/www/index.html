@@ -81,11 +81,11 @@
                   
 				<div id="controls"> 
 				
-				     <input id="color" type="color" value="#ff0000" onchange="x =document.getElementById('color');"/>  
+				     <input id="color" type="color" value="#ff0000" onchange="updateColor(this.value)"/>  
 				     
-				     <div id="slider"></div>
+				     <input id="slider" type ="range" min ="1" max="20" step ="1" value ="1" onchange="updateSlider(this.value)"/>
 				     
-				     <input id="white" type="button" onclick="color(this)" value="Eraser">
+				     <button id="eraser" onclick="myEraser()">Eraser</button>
 				     <input id="erase-color" type="button" value="Clear" id="clr" size="23" onclick="erase()">
 				     <input id="save" type="button" value="Save" id="save" size="23" onclick="save()">
 			    </div>
@@ -100,13 +100,23 @@
 
    // Variables for referencing the canvas and 2dcanvas context
     var canvas,ctx;
+    
 
- 
-	var s; 
+	var coloring;
 	
-	 $(function() {
-    $( "#slider" ).slider();
-  });
+	function updateColor(colorAmount) {
+		var c = document.getElementById("color").value;
+    coloring = c;
+
+	} 
+	
+	var s;//size according to the range input 
+	
+	function updateSlider(slideAmount) {
+		var x = document.getElementById("slider").value;
+    s = x;
+
+	}
 
 
     // Variables to keep track of the mouse position and left-button status 
@@ -133,7 +143,8 @@
         r=0; g=0; b=0; a=255;
 
         // Select a fill style
-        ctx.strokeStyle = "rgba("+r+","+g+","+b+","+(a/255)+")";
+        // ctx.strokeStyle = "rgba("+r+","+g+","+b+","+(a/255)+")";
+        ctx.strokeStyle = coloring;
 
         // Set the line "cap" style to round, so lines at different angles can join into each other
         ctx.lineCap = "round";
@@ -253,6 +264,15 @@
         }
     }
 
+	function myEraser(){
+	
+			ctx.globalCompositeOperation = "destination-out";
+			ctx.strokeStyle = "rgba(0,0,0,1)";
+			drawLine(ctx,touchX,touchY,s);
+			
+	
+
+	 }
 
     // Set-up the canvas and add our event handlers after the page has loaded
     function init() {
